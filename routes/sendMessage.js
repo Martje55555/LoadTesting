@@ -25,12 +25,6 @@ router.post('/', async (req, res, next) => {
   .catch((err) => {
     res.send(err);
   })
-    // .then(() => {
-    //   res.send('message created!');
-    // })
-    // .catch(() => {
-    //   res.send('error');
-    // })
 });
 
 module.exports = router;
