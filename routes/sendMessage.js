@@ -1,6 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var { Svix } = require('svix');
+const express = require('express');
+const moment = require('moment');
+const router = express.Router();
+const { Svix } = require('svix');
 
 const Config = require('../config.js');
 const API_KEY = Config.API_KEY;
@@ -10,10 +11,12 @@ const app = Config.APP;
 /* Create Message */
 router.post('/', async (req, res, next) => {
   return await svix.message.create(app, {
-    "eventType": "invoice.paid",
+    "eventType": "check.create",
     "payload": {
-      "status": "successful",
-      "message": "test again again"
+      "id": "chk_123",
+      "description": "Demo Check",
+      "date_created": moment.utc(),
+      "object": "check"
     }
   })
   .then (() => {
