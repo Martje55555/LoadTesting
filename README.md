@@ -15,7 +15,7 @@ starts in port 3000
 
 * `-m` specifies http request
 * `-n` Indicates how many requests are going to be made.
-* `-c` Indicates how many clients (people/users) will be hitting the site at the same time. While ab runs, there will be -c clients hitting the site. This is what actually decides 
+* `-c` Indicates how many clients (people/users) will be hitting the site at the same time. While ab runs, there will be -c clients hitting the site.
 
 Go [here](http://httpd.apache.org/docs/2.4/programs/ab.html) for more options
 
