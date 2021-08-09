@@ -15,8 +15,8 @@ router.post('/', async (req, res, next) => {
   .then (() => {
     res.send('Event Created!');
   })
-  .catch(() => {
-    res.send('error');
+  .catch((err) => {
+    res.send(err);
   })
 });
 

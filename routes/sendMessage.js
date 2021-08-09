@@ -22,6 +22,9 @@ router.post('/', async (req, res, next) => {
   .then (() => {
     res.send('Message Created!');
   })
+  .catch((err) => {
+    res.send(err);
+  })
     // .then(() => {
     //   res.send('message created!');
     // })
