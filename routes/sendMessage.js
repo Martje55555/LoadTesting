@@ -10,21 +10,20 @@ const app = Config.APP;
 
 /* Create Message */
 router.post('/', async (req, res, next) => {
-  return await svix.message.create(app, {
+  const message = await svix.message.create(app, {
     "eventType": "check.create",
     "payload": {
-      "id": "chk_123",
-      "description": "Demo Check",
-      "date_created": moment.utc(),
-      "object": "check"
-    }
-  })
-  .then (() => {
-    res.send('Message Created!');
+        "id": "chk_234",
+        "object": "list",
+        "next_url": "https://api.lob.com/v1/templates?limit=2&after=eyJkYXRlT2Zmc2V0IjoiMjAxOS0wMy0yOVQxMDoyMjozNC42NDJaIiwiaWRPZmZzZXQiOiJ0bXBsXzU5YjIxNTBhZTEyMDg4NyJ9",
+        "previous_url": null,
+        "count": 2,
+      }
   })
   .catch((err) => {
     res.send(err);
   })
+  res.json(message);
 });
 
 module.exports = router;

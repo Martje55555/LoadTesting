@@ -13,12 +13,10 @@ const jsonParser = express.json();
 /* Create Application */
 router.post('/', jsonParser, async (req, res, next) => {
   const endpointOut = await svix.endpoint.create(app, req.body)
-  .then (() => {
-    res.send(endpointOut);
-  })
   .catch((err) => {
     res.send(err);
   })
+  res.send(endpointOut);
 });
 
 module.exports = router;
