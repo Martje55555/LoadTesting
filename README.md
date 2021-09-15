@@ -1,4 +1,4 @@
-# LoadTest
+# Load Test
 
 Perfomance/Load testing using [Apache Bench](http://httpd.apache.org/docs/2.4/programs/ab.html)
 
